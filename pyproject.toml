@@ -22,8 +22,8 @@ dependencies = [
     "cryptography"
 ]
 
+[project.scripts]
+xdg-tool = "xdg_tool:main"
+
 [project.urls]
 Homepage = "https://github.com/jjjm03299-debug/xdg-tool"
-
-[tool.setuptools]
-script-files = ["xdg-tool.py"]
