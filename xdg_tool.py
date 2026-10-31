@@ -19,7 +19,7 @@ try:
 except ImportError:
     jwt = None
 
-VERSION = "2.3.2"
+VERSION = "2.3.3"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SECRET_FILE = os.path.join(BASE_DIR, "secret.key")
