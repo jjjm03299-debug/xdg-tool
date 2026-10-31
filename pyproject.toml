@@ -26,4 +26,4 @@ dependencies = [
 Homepage = "https://github.com/jjjm03299-debug/xdg-tool"
 
 [tool.setuptools]
-scripts = ["xdg-tool.py"]
+script-files = ["xdg-tool.py"]
