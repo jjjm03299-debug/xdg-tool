@@ -1,0 +1,40 @@
+name: Publish to PyPI (Manual Token Prompt)
+
+on:
+  workflow_dispatch:
+    inputs:
+      pypi_api_token:
+        description: 'Enter PyPI API token (starts with pypi-)'
+        required: true
+        type: string
+
+jobs:
+  build-and-publish:
+    name: Build and Upload to PyPI
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install build and upload tools
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install build twine
+
+      - name: Clean previous build artifacts
+        run: rm -rf dist/ build/ *.egg-info
+
+      - name: Build package distribution files
+        run: python3 -m build
+
+      - name: Publish package to PyPI
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ inputs.pypi_api_token }}
+        run: twine upload dist/*
