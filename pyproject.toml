@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xdg-tool"
+version = "2.3.2"
+description = "XDG Tool CLI with execution, logs, alias, config, server tools, and Replit backend integration"
+readme = "README.md"
+authors = [
+    { name = "jjjm03299-wq" }
+]
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.7"
+dependencies = [
+    "pyjwt>=2.0.0",
+    "cryptography"
+]
+
+[project.urls]
+Homepage = "https://github.com/jjjm03299-debug/xdg-tool"
+
+[tool.setuptools]
+scripts = ["xdg-tool.py"]
